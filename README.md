@@ -4,9 +4,8 @@ Supports both UI and API tests
 ## :gear: How to Start
 1. Clone the project
 2. `npm i` - Install all the dependencies
-3. There are a lot dependencies that are not updated frequently in parallel with cypress. So while installing if you are seeing conflicts use`npm i --force`.
+3. There are a lot dependencies that are not updated frequently in parallel with cypress. So while installing if you are seeing conflicts use `npm i --force`.
 4. Run `npx cypress run` to execute the tests in CLI
-5. To create Allure reports execute first `npm run allure:report` and then `allure open`
 6. To run postman collection, install [postman ci](https://learning.postman.com/docs/postman-cli/postman-cli-installation)
 
 ## :heavy_check_mark: Run tests
