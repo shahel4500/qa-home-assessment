@@ -2,7 +2,6 @@ const { defineConfig } = require("cypress");
 const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
 const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild");
-const allureWriter = require("@shelex/cypress-allure-plugin/writer");
 
 async function setupNodeEvents(on, config) {
   // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
@@ -14,7 +13,6 @@ async function setupNodeEvents(on, config) {
       plugins: [createEsbuildPlugin.default(config)],
     })
   );
-  allureWriter(on, config);
   
   on('task', {
     log (message) {
@@ -31,10 +29,6 @@ module.exports = defineConfig({
     setupNodeEvents,
     specPattern: "cypress/e2e/features/*.feature",
     defaultCommandTimeout: 20000,
-    chromeWebSecurity: false,
-    experimentalWebKitSupport: true,
-    env: {
-      allureReuseAfterSpec: true,
-    },
+    chromeWebSecurity: false
   },
 });

@@ -7,6 +7,7 @@ Supports both UI and API tests
 3. There are a lot dependencies that are not updated frequently in parallel with cypress. So while installing if you are seeing conflicts use`npm i --force`.
 4. Run `npx cypress run` to execute the tests in CLI
 5. To create Allure reports execute first `npm run allure:report` and then `allure open`
+6. To run postman collection, install [postman ci](https://learning.postman.com/docs/postman-cli/postman-cli-installation)
 
 ## :heavy_check_mark: Run tests
 - cypress test runner (cypress __open__):
@@ -14,6 +15,10 @@ Supports both UI and API tests
     
 - cypress __headless mode__ (cypress run):
   - `npm run cypress:chrome:headless` (change browser name as firefox or safari)
+
+- newman login test:
+  - `postman login --with-api-key <api-key>` (One time)
+  - `npm run newman:login` 
 
 #### :test_tube: Tests
 :file_folder: Features are located in `cypress/e2e/features` folder
